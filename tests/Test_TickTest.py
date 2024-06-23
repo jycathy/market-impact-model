@@ -1,7 +1,7 @@
 import unittest
 
 from impactUtils.TickTest import TickTest
-from taq.MyDirectories import *
+from taq import MyDirectories
 from taq.TAQTradesReader import TAQTradesReader
 
 # Test of TickTest, a class used to classify
@@ -23,7 +23,7 @@ class Test_TickTest(unittest.TestCase):
     # Classify an entire day of data and compare
     # to first 10 expected classifications
     def test_classifyAll(self):
-        filePathName = MyDirectories.BinRTTradesDir + "/20070919/IBM_trades.binRT"
+        filePathName = MyDirectories.getTradesDir() + "/20070919/IBM_trades.binRT"
         data = TAQTradesReader(filePathName)
         tickTest = TickTest()
         startOfDay = 18 * 60 * 60 * 1000 / 2

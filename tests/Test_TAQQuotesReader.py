@@ -1,10 +1,7 @@
-import os
-import sys
 import unittest
 
 from taq import MyDirectories
 from taq.TAQQuotesReader import TAQQuotesReader
-from taq.TAQTradesReader import TAQTradesReader
 
 print("Success")
 class Test_TAQQuotesReader(unittest.TestCase):
@@ -12,7 +9,7 @@ class Test_TAQQuotesReader(unittest.TestCase):
     def test1(self):
 
         reader = TAQQuotesReader( MyDirectories.getQuotesDir() + '/20070822/AAI_quotes.binRQ' )
-        #reader = TAQQuotesReader("C:/Shubham/ATQSHW1/quotes/20070822/AAI_quotes.binRQ")
+
         zz = list([
             reader.getN(),
             reader.getSecsFromEpocToMidn(),

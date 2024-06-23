@@ -1,15 +1,13 @@
 import unittest
 
-from taq.MyDirectories import MyDirectories
-from taq.TAQQuotesReader import TAQQuotesReader
+from taq import MyDirectories
 from taq.TAQTradesReader import TAQTradesReader
-
 
 class Test_TAQTradesReader(unittest.TestCase):
 
     def test1(self):
 
-        reader = TAQTradesReader( MyDirectories.getTradesDir() + '/20070822/AAI_trades.binRT' )
+        reader = TAQTradesReader( MyDirectories.getTradesDir() + '/20070920/IBM_trades.binRT' )
         
         zz = list([
             reader.getN(),
