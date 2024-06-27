@@ -14,6 +14,8 @@ def getImbalance(data, startTS, endTS):
     for i in range(0, len(classifications)):
         imbalance_volume += classifications[i][2] * data.getSize(i)
     
+    if VWAP(data, startTS, endTS).getVWAP() == None:
+        return None
+    
     imbalance = VWAP(data, startTS, endTS).getVWAP()*imbalance_volume
-
     return imbalance

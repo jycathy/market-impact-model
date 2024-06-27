@@ -16,8 +16,8 @@ class VWAP(object):
             v = v + (data.getSize(i) * data.getPrice(i))
             s = s + data.getSize(i)
         if counter == 0:
-            self.counter = 0
-            self.vwap = None
+            self._counter = 0
+            self._vwap = None
         else:
             self._counter = counter
             self._vwap = v / s
